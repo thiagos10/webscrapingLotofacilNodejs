@@ -25,8 +25,8 @@ function convertDate(data) {
     return new Date(ano + '-' + ("0" + mes).slice(-2) + '-' + ("0" + dia).slice(-2))
 }
 
-const job = new CronJob('*/1 * * * *', () => { // a cada 1 minuto
-//const job = new CronJob('0 * * * *', () => { // a cada 1 hora    
+//const job = new CronJob('*/1 * * * *', () => { // a cada 1 minuto
+const job = new CronJob('0 * * * *', () => { // a cada 1 hora    
 
     (async () => {
         try {
