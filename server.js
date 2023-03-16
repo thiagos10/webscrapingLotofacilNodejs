@@ -30,7 +30,8 @@ const job = new CronJob('0 * * * *', () => { // a cada 1 hora
 
     (async () => {
         try {
-            const browser = await puppeteer.launch({ puppeteerConfig })
+            //const browser = await puppeteer.launch({ puppeteerConfig })
+            const browser = await puppeteer.launch({ args: ['--no-sandbox', '--disable-setuid-sandbox'], ignoreDefaultArgs: ['--disable-extensions'] })
             const page = await browser.newPage()
             await page.goto('http://loterias.caixa.gov.br/wps/portal/loterias/landing/lotofacil')
             let html = await page.content()
