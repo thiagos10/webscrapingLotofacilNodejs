@@ -67,8 +67,8 @@ const job = new CronJob('0 * * * *', () => { // a cada 1 hora
                     console.log('Não existe')
                     if (resultado.substring(9, 13) != 0) {
                         knex('TAB_LOTOFACIL').insert({
-                            //COD_SORT: parseInt(resultado.substring(9, 13)),
-                            COD_SORT: resultado.substring(9, 13),
+                            COD_SORT: parseInt(resultado.substring(9, 13)),
+                            //COD_SORT: resultado.substring(9, 13),
                             DTA_SORT: convertDate(data[1]),
                             COD_BOL1: num1,
                             COD_BOL2: num2,
